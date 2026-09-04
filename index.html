@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YaroRage Scripts | RADMIR CRMP</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +14,7 @@
             --blue:#0066ff;--blue2:#0088ff;--blue3:#00aaff;--cyan:#00d4ff;
             --glow:rgba(0,102,255,0.4);--glow2:rgba(0,170,255,0.25);
             --text:#e0e8f0;--muted:#5a6a80;--accent:#00ccff;
+            --gold-start:#ffd700;--gold-end:#b8860b;--gold:#e8c050;
         }
         html{scroll-behavior:smooth;overflow-x:hidden}
         body{
@@ -315,6 +317,20 @@
         .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
         .reveal.visible{opacity:1;transform:translateY(0)}
 
+        /* === LOGO === */
+        .hero-logo{
+            width:170px;height:170px;margin-bottom:25px;
+            filter:drop-shadow(0 0 30px var(--glow));
+            animation:fadeUp 0.8s ease-out 0.1s both;
+        }
+        .hero-logo img{width:100%;height:100%;object-fit:contain}
+
+        /* === GOLD ACCENT === */
+        .goldtext{
+            background:linear-gradient(135deg,var(--gold-start),var(--gold-end));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+        }
+
         /* === SOUND TOGGLE === */
         .sound-toggle{
             position:fixed;bottom:30px;right:30px;z-index:999;
@@ -356,10 +372,11 @@
     <div class="hero-orb" style="top:10%;left:20%"></div>
     <div class="hero-orb" style="bottom:20%;right:15%;animation-delay:-3s"></div>
     <div class="hero-badge"><span class="dot"></span> RADMIR CRMP Scripts</div>
-    <h1><span class="gradient">YaroRage</span><br>Script Collection</h1>
+    <div class="hero-logo"><img src="logo.png" alt="YaroRage Logo"></div>
+    <h1><span class="gradient goldtext">YaroRage</span><br>Script Collection</h1>
     <p class="hero-sub">Набор скриптов для MoonLoader, которые автоматизируют, ускоряют и делают игру в RADMIR CRMP удобнее</p>
     <div class="hero-buttons">
-        <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.3/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" id="downloadBtn">
+        <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.4/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" id="downloadBtn">
             <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             Скачать AutoUpdaterYR
         </a>
@@ -497,7 +514,7 @@
                 <li>Watchdog для автоперезапуска при вылетах (mafk)</li>
                 <li>Один exe-файл — ничего лишнего</li>
             </ul>
-            <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.3/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" style="margin-top:10px">
+            <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.4/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" style="margin-top:10px">
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 Скачать последний релиз
             </a>
