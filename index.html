@@ -277,11 +277,11 @@
         @keyframes rotateBorder{to{transform:rotate(360deg)}}
         .preview-icon{
             width:80px;height:80px;border-radius:20px;
-            background:linear-gradient(135deg,var(--blue),var(--blue2));
+            background:linear-gradient(135deg,var(--gold-start),var(--gold-end));
             display:flex;align-items:center;justify-content:center;
-            margin-bottom:20px;box-shadow:0 10px 40px var(--glow);
+            margin-bottom:20px;box-shadow:0 10px 40px var(--glow-gold);
         }
-        .preview-icon svg{width:40px;height:40px;fill:var(--gold-start)}
+        .preview-icon svg{width:40px;height:40px;fill:#1a1400}
         .preview-text{
             font-family:'Orbitron',sans-serif;font-size:1.1rem;
             color:var(--text);margin-bottom:8px;
@@ -541,7 +541,7 @@
                 <div class="preview-icon">
                     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 </div>
-                <div class="preview-text">AutoUpdaterYR</div>
+                <div class="preview-text">AutoUpdater<span class="yr">YR</span></div>
                 <div class="preview-sub">Обновление скриптов...</div>
                 <div class="preview-bar"><div class="preview-bar-fill"></div></div>
             </div>
