@@ -270,19 +270,20 @@
             display:flex;align-items:center;justify-content:center;
             margin-bottom:20px;box-shadow:0 10px 40px var(--glow);
         }
-        .preview-icon svg{width:40px;height:40px;fill:#fff}
+        .preview-icon svg{width:40px;height:40px;fill:var(--gold-start)}
         .preview-text{
             font-family:'Orbitron',sans-serif;font-size:1.1rem;
             color:var(--text);margin-bottom:8px;
         }
         .preview-sub{font-size:0.85rem;color:var(--muted)}
         .preview-bar{
-            width:80%;height:4px;background:rgba(0,102,255,0.15);
+            width:80%;height:4px;background:rgba(255,215,0,0.15);
             border-radius:2px;margin-top:25px;overflow:hidden;
         }
         .preview-bar-fill{
-            width:75%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));
+            width:75%;height:100%;background:linear-gradient(90deg,var(--gold-end),var(--gold-start));
             border-radius:2px;animation:barPulse 3s ease-in-out infinite;
+            box-shadow:0 0 12px var(--glow-gold);
         }
         @keyframes barPulse{0%,100%{width:75%}50%{width:95%}}
 
