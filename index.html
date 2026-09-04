@@ -208,11 +208,11 @@
         .card-icon{
             width:56px;height:56px;border-radius:14px;
             display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(135deg,rgba(0,102,255,0.15),rgba(0,170,255,0.1));
-            border:1px solid rgba(0,102,255,0.2);margin-bottom:20px;
+            background:linear-gradient(135deg,rgba(255,215,0,0.15),rgba(184,134,11,0.1));
+            border:1px solid rgba(255,215,0,0.25);margin-bottom:20px;
             font-size:1.5rem;
         }
-        .card-icon svg{width:28px;height:28px;fill:var(--cyan)}
+        .card-icon svg{width:28px;height:28px;fill:var(--gold-start)}
         .script-card h3{
             font-family:'Orbitron',sans-serif;font-weight:600;
             font-size:1.15rem;margin-bottom:6px;color:var(--text);
@@ -345,6 +345,10 @@
         }
         .yr{
             background:linear-gradient(180deg,var(--gold-start),var(--gold-end));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+        }
+        .bluetext{
+            background:linear-gradient(135deg,var(--blue),var(--cyan));
             -webkit-background-clip:text;-webkit-text-fill-color:transparent;
         }
 
@@ -507,7 +511,7 @@
 <section id="updater" class="updater-section">
     <div class="section-header reveal">
         <div class="label">// auto-updater</div>
-        <h2>AutoUpdaterYR</h2>
+        <h2><span class="bluetext">AutoUpdater</span><span class="yr">YR</span></h2>
         <p>Лаунчер, который держит все скрипты в актуальном состоянии</p>
     </div>
 
