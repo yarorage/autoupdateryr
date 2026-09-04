@@ -11,10 +11,11 @@
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
             --bg:#05080f;--bg2:#0a0e1a;--bg3:#0d1225;
-            --blue:#b8860b;--blue2:#d4af37;--blue3:#ffd700;--cyan:#e8c050;
-            --glow:rgba(212,175,55,0.40);--glow2:rgba(255,215,0,0.22);
-            --text:#f0e8d0;--muted:#8a7a50;--accent:#ffd700;
+            --blue:#0066ff;--blue2:#0088ff;--blue3:#00aaff;--cyan:#00d4ff;
+            --glow:rgba(0,102,255,0.4);--glow2:rgba(0,170,255,0.25);
+            --text:#e0e8f0;--muted:#5a6a80;--accent:#00ccff;
             --gold-start:#ffd700;--gold-end:#b8860b;--gold:#e8c050;
+            --glow-gold:rgba(255,215,0,0.45);
         }
         html{scroll-behavior:smooth;overflow-x:hidden}
         body{
@@ -32,8 +33,8 @@
         .grid-bg{
             position:fixed;inset:0;z-index:0;pointer-events:none;
             background-image:
-                linear-gradient(rgba(212,175,55,0.03) 1px,transparent 1px),
-                linear-gradient(90deg,rgba(212,175,55,0.03) 1px,transparent 1px);
+                linear-gradient(rgba(0,102,255,0.03) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(0,102,255,0.03) 1px,transparent 1px);
             background-size:60px 60px;
             animation:gridMove 20s linear infinite;
         }
@@ -57,10 +58,10 @@
             position:fixed;top:0;left:0;right:0;z-index:1000;
             padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;
             background:rgba(5,8,15,0.85);backdrop-filter:blur(20px);
-            border-bottom:1px solid rgba(212,175,55,0.15);
+            border-bottom:1px solid rgba(0,102,255,0.15);
             transition:all 0.3s;
         }
-        nav.scrolled{background:rgba(5,8,15,0.95);box-shadow:0 4px 30px rgba(212,175,55,0.1)}
+        nav.scrolled{background:rgba(5,8,15,0.95);box-shadow:0 4px 30px rgba(0,102,255,0.1)}
         .nav-logo{
             font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.4rem;
             background:linear-gradient(135deg,var(--blue),var(--cyan));
@@ -90,12 +91,12 @@
         .hero-badge{
             display:inline-flex;align-items:center;gap:8px;
             padding:8px 20px;border-radius:50px;
-            background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);
-            font-size:0.8rem;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;
+            background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.35);
+            font-size:0.8rem;color:var(--accent);letter-spacing:2px;text-transform:uppercase;
             margin-bottom:30px;
             animation:fadeUp 0.8s ease-out 0.2s both;
         }
-        .hero-badge .dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
+        .hero-badge .dot{width:6px;height:6px;background:var(--gold-start);border-radius:50%;animation:pulse 2s infinite}
         @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.5)}}
         .hero h1{
             font-family:'Orbitron',sans-serif;font-weight:900;
@@ -104,7 +105,7 @@
             animation:fadeUp 0.8s ease-out 0.4s both;
         }
         .hero h1 .gradient{
-            background:linear-gradient(135deg,var(--gold-end),var(--gold-start),var(--gold-end));
+            background:linear-gradient(135deg,var(--blue),var(--cyan),var(--blue2));
             -webkit-background-clip:text;-webkit-text-fill-color:transparent;
             background-size:200% 200%;animation:gradientShift 4s ease infinite;
         }
@@ -129,12 +130,12 @@
             transition:all 0.3s;position:relative;overflow:hidden;
         }
         .btn-primary{
-            background:linear-gradient(135deg,var(--blue2),var(--gold-start));
-            color:#1a1400;box-shadow:0 4px 25px var(--glow);
+            background:linear-gradient(135deg,var(--gold-end),var(--gold-start));
+            color:#1a1400;box-shadow:0 4px 25px var(--glow-gold);
         }
         .btn-primary:hover{
-            transform:translateY(-3px);box-shadow:0 8px 40px var(--glow);
-            background:linear-gradient(135deg,var(--gold-start),var(--blue3));
+            transform:translateY(-3px);box-shadow:0 8px 40px var(--glow-gold);
+            background:linear-gradient(135deg,var(--gold-start),var(--gold));
         }
         .btn-primary::before{
             content:'';position:absolute;inset:0;
@@ -144,10 +145,10 @@
         .btn-primary:hover::before{transform:translateX(100%)}
         .btn-outline{
             background:transparent;color:var(--text);
-            border:1px solid rgba(212,175,55,0.4);
+            border:1px solid rgba(0,102,255,0.4);
         }
         .btn-outline:hover{
-            background:rgba(212,175,55,0.1);border-color:var(--blue);
+            background:rgba(0,102,255,0.1);border-color:var(--blue);
             transform:translateY(-3px);
         }
         .btn svg{width:20px;height:20px;fill:currentColor}
@@ -181,7 +182,7 @@
         }
         .script-card{
             background:linear-gradient(145deg,var(--bg2),var(--bg3));
-            border:1px solid rgba(212,175,55,0.1);border-radius:16px;
+            border:1px solid rgba(0,102,255,0.1);border-radius:16px;
             padding:35px 30px;position:relative;overflow:hidden;
             transition:all 0.4s;cursor:default;
         }
@@ -191,15 +192,15 @@
             opacity:0;transition:opacity 0.4s;
         }
         .script-card:hover{
-            transform:translateY(-8px);border-color:rgba(212,175,55,0.3);
+            transform:translateY(-8px);border-color:rgba(0,102,255,0.3);
             box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px var(--glow2);
         }
         .script-card:hover::before{opacity:1}
         .card-icon{
             width:56px;height:56px;border-radius:14px;
             display:flex;align-items:center;justify-content:center;
-            background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(255,215,0,0.1));
-            border:1px solid rgba(212,175,55,0.2);margin-bottom:20px;
+            background:linear-gradient(135deg,rgba(0,102,255,0.15),rgba(0,170,255,0.1));
+            border:1px solid rgba(0,102,255,0.2);margin-bottom:20px;
             font-size:1.5rem;
         }
         .card-icon svg{width:28px;height:28px;fill:var(--cyan)}
@@ -217,7 +218,7 @@
         }
         .script-card .tag{
             padding:4px 12px;border-radius:20px;font-size:0.72rem;
-            background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);
+            background:rgba(0,102,255,0.08);border:1px solid rgba(0,102,255,0.2);
             color:var(--accent);letter-spacing:0.5px;
         }
 
@@ -253,7 +254,7 @@
         .updater-preview{
             width:100%;max-width:450px;aspect-ratio:4/3;
             background:linear-gradient(145deg,var(--bg3),var(--bg2));
-            border:1px solid rgba(212,175,55,0.2);border-radius:16px;
+            border:1px solid rgba(0,102,255,0.2);border-radius:16px;
             display:flex;flex-direction:column;align-items:center;justify-content:center;
             padding:30px;position:relative;overflow:hidden;
         }
@@ -269,14 +270,14 @@
             display:flex;align-items:center;justify-content:center;
             margin-bottom:20px;box-shadow:0 10px 40px var(--glow);
         }
-        .preview-icon svg{width:40px;height:40px;fill:#1a1400}
+        .preview-icon svg{width:40px;height:40px;fill:#fff}
         .preview-text{
             font-family:'Orbitron',sans-serif;font-size:1.1rem;
             color:var(--text);margin-bottom:8px;
         }
         .preview-sub{font-size:0.85rem;color:var(--muted)}
         .preview-bar{
-            width:80%;height:4px;background:rgba(212,175,55,0.15);
+            width:80%;height:4px;background:rgba(0,102,255,0.15);
             border-radius:2px;margin-top:25px;overflow:hidden;
         }
         .preview-bar-fill{
@@ -292,11 +293,11 @@
             gap:20px;max-width:1100px;margin:0 auto;
         }
         .cmd-item{
-            background:var(--bg3);border:1px solid rgba(212,175,55,0.08);
+            background:var(--bg3);border:1px solid rgba(0,102,255,0.08);
             border-radius:10px;padding:16px 20px;
             transition:all 0.3s;
         }
-        .cmd-item:hover{border-color:rgba(212,175,55,0.25);transform:translateX(4px)}
+        .cmd-item:hover{border-color:rgba(0,102,255,0.25);transform:translateX(4px)}
         .cmd-item code{
             font-family:'Share Tech Mono',monospace;color:var(--cyan);
             font-size:0.9rem;
@@ -307,7 +308,7 @@
         footer{
             position:relative;z-index:1;text-align:center;
             padding:50px 40px 30px;
-            border-top:1px solid rgba(212,175,55,0.1);
+            border-top:1px solid rgba(0,102,255,0.1);
         }
         footer p{color:var(--muted);font-size:0.85rem}
         footer a{color:var(--blue);text-decoration:none}
@@ -335,11 +336,11 @@
         .sound-toggle{
             position:fixed;bottom:30px;right:30px;z-index:999;
             width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;
-            background:var(--bg3);border:1px solid rgba(212,175,55,0.3);
+            background:var(--bg3);border:1px solid rgba(0,102,255,0.3);
             display:flex;align-items:center;justify-content:center;
             transition:all 0.3s;
         }
-        .sound-toggle:hover{background:rgba(212,175,55,0.15);transform:scale(1.1)}
+        .sound-toggle:hover{background:rgba(0,102,255,0.15);transform:scale(1.1)}
         .sound-toggle svg{width:20px;height:20px;fill:var(--muted);transition:fill 0.3s}
         .sound-toggle.active svg{fill:var(--cyan)}
 
@@ -361,9 +362,9 @@
 <nav id="navbar">
     <div class="nav-logo">YARO<span>RAGE</span></div>
     <ul class="nav-links">
-        <li><a href="#scripts">РЎРєСЂРёРїС‚С‹</a></li>
+        <li><a href="#scripts">Скрипты</a></li>
         <li><a href="#updater">AutoUpdaterYR</a></li>
-        <li><a href="#commands">РљРѕРјР°РЅРґС‹</a></li>
+        <li><a href="#commands">Команды</a></li>
         <li><a href="https://github.com/yarorage/radmir-scripts" target="_blank">GitHub</a></li>
     </ul>
 </nav>
@@ -374,21 +375,21 @@
     <div class="hero-badge"><span class="dot"></span> RADMIR CRMP Scripts</div>
     <div class="hero-logo"><img src="logo.png" alt="YaroRage Logo"></div>
     <h1><span class="gradient goldtext">YaroRage</span><br><span class="gradient">Script Collection</span></h1>
-    <p class="hero-sub">РќР°Р±РѕСЂ СЃРєСЂРёРїС‚РѕРІ РґР»СЏ MoonLoader, РєРѕС‚РѕСЂС‹Рµ Р°РІС‚РѕРјР°С‚РёР·РёСЂСѓСЋС‚, СѓСЃРєРѕСЂСЏСЋС‚ Рё РґРµР»Р°СЋС‚ РёРіСЂСѓ РІ RADMIR CRMP СѓРґРѕР±РЅРµРµ</p>
+    <p class="hero-sub">Набор скриптов для MoonLoader, которые автоматизируют, ускоряют и делают игру в RADMIR CRMP удобнее</p>
     <div class="hero-buttons">
-        <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.4/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" id="downloadBtn">
+        <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.3/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" id="downloadBtn">
             <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-            РЎРєР°С‡Р°С‚СЊ AutoUpdaterYR
+            Скачать AutoUpdaterYR
         </a>
-        <a href="#scripts" class="btn btn-outline">РЈР·РЅР°С‚СЊ Р±РѕР»СЊС€Рµ</a>
+        <a href="#scripts" class="btn btn-outline">Узнать больше</a>
     </div>
 </section>
 
 <section id="scripts">
     <div class="section-header reveal">
         <div class="label">// moonloader scripts</div>
-        <h2>РќР°С€Рё СЃРєСЂРёРїС‚С‹</h2>
-        <p>РљР°Р¶РґС‹Р№ СЃРєСЂРёРїС‚ СЃРѕР·РґР°РЅ РґР»СЏ СЂРµС€РµРЅРёСЏ РєРѕРЅРєСЂРµС‚РЅС‹С… Р·Р°РґР°С‡ РІ RADMIR CRMP Рё СЂР°Р±РѕС‚Р°РµС‚ С‡РµСЂРµР· MoonLoader + SAMPFUNCS</p>
+        <h2>Наши скрипты</h2>
+        <p>Каждый скрипт создан для решения конкретных задач в RADMIR CRMP и работает через MoonLoader + SAMPFUNCS</p>
     </div>
 
     <div class="scripts-grid">
@@ -397,13 +398,13 @@
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             </div>
             <h3>AutoLogin 2.0</h3>
-            <div class="version">v2.0 вЂ” AutoLogin_2.0.lua</div>
+            <div class="version">v2.0 — AutoLogin_2.0.lua</div>
             <p>
-                РџРѕР»РЅР°СЏ Р°РІС‚РѕРјР°С‚РёР·Р°С†РёСЏ РІС…РѕРґР° РЅР° СЃРµСЂРІРµСЂ. РЎРєСЂРёРїС‚ СЃР°Рј РІРІРѕРґРёС‚ РїР°СЂРѕР»СЊ С‡РµСЂРµР· СЌРјСѓР»СЏС†РёСЋ РЅР°Р¶Р°С‚РёР№ РєР»Р°РІРёС€,
-                РІС‹Р±РёСЂР°РµС‚ СЃРїР°РІРЅ (Enter/Esc РїРѕ РЅР°СЃС‚СЂРѕР№РєРµ) Рё РїРµСЂРµРїРѕРґРєР»СЋС‡Р°РµС‚СЃСЏ РїСЂРё Р»СЋР±С‹С… РІС‹Р»РµС‚Р°С….
-                Р’РєР»СЋС‡Р°РµС‚ <strong>Anti-AFK</strong> СЃ 11 РїР°С‚С‚РµСЂРЅР°РјРё movement Рё СЃРёСЃС‚РµРјСѓ <strong>AutoRestart</strong> вЂ”
-                РµСЃР»Рё РёРіСЂР° РІС‹Р»РµС‚РµР»Р°, mafk-watchdog РїРµСЂРµР·Р°РїСѓСЃС‚РёС‚ РµС‘ Рё СЃРЅРѕРІР° Р·Р°Р»РѕРіРёРЅРёС‚.
-                РќРёРєР°РєРѕРіРѕ СЂСѓС‡РЅРѕРіРѕ РІРІРѕРґР° вЂ” РїСЂРѕСЃС‚Рѕ Р·Р°РїСѓСЃС‚Рё Рё РёРіСЂР°Р№.
+                Полная автоматизация входа на сервер. Скрипт сам вводит пароль через эмуляцию нажатий клавиш,
+                выбирает спавн (Enter/Esc по настройке) и переподключается при любых вылетах.
+                Включает <strong>Anti-AFK</strong> с 11 паттернами movement и систему <strong>AutoRestart</strong> —
+                если игра вылетела, mafk-watchdog перезапустит её и снова залогинит.
+                Никакого ручного ввода — просто запусти и играй.
             </p>
             <div class="tags">
                 <span class="tag">Auto-Login</span>
@@ -419,14 +420,14 @@
                 <svg viewBox="0 0 24 24"><path d="M7 5h10v2h2V3c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v4h2V5zm8.41 11.59L20 12l-4.59-4.59L14 8.83 17.17 12 14 15.17l1.41 1.42zM10 15.17L6.83 12 10 8.83 8.59 7.41 4 12l4.59 4.59L10 15.17zM17 19H7v-2H5v4c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4h-2v2z"/></svg>
             </div>
             <h3>UltraHack (CheatByYaroRage)</h3>
-            <div class="version">v1.0 вЂ” CheatByYaroRage.lua</div>
+            <div class="version">v1.0 — CheatByYaroRage.lua</div>
             <p>
-                РњСѓР»СЊС‚Рё-С‡РёС‚ СЃ СѓРґРѕР±РЅС‹Рј ImGui РёРЅС‚РµСЂС„РµР№СЃРѕРј (РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ РґРѕР»РіРёРј РЅР°Р¶Р°С‚РёРµРј N).
-                Р’РєР»СЋС‡Р°РµС‚ <strong>Silent Aim</strong> (LITE/RAGE), <strong>TriggerBot</strong> РІ 3 СЂРµР¶РёРјР°С…,
-                <strong>ClickWarp</strong> (РўРџ РїРѕ РєР°СЂС‚Рµ РєРѕР»С‘СЃРёРєРѕРј), <strong>AirBrake</strong>, <strong>SpeedHack</strong>,
-                <strong>GodCar</strong>, <strong>NoReload</strong>, <strong>NoDamage</strong> РѕС‚ СЃРѕСЋР·РЅРёРєРѕРІ,
-                FullSkillGun, Damage Informer, EyeFish, AntiStun Рё РјРЅРѕРіРѕРµ РґСЂСѓРіРѕРµ.
-                Р’СЃРµ РЅР°СЃС‚СЂРѕР№РєРё СЃРѕС…СЂР°РЅСЏСЋС‚СЃСЏ РІ INI Рё Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё Р·Р°РіСЂСѓР¶Р°СЋС‚СЃСЏ.
+                Мульти-чит с удобным ImGui интерфейсом (открывается долгим нажатием N).
+                Включает <strong>Silent Aim</strong> (LITE/RAGE), <strong>TriggerBot</strong> в 3 режимах,
+                <strong>ClickWarp</strong> (ТП по карте колёсиком), <strong>AirBrake</strong>, <strong>SpeedHack</strong>,
+                <strong>GodCar</strong>, <strong>NoReload</strong>, <strong>NoDamage</strong> от союзников,
+                FullSkillGun, Damage Informer, EyeFish, AntiStun и многое другое.
+                Все настройки сохраняются в INI и автоматически загружаются.
             </p>
             <div class="tags">
                 <span class="tag">Silent Aim</span>
@@ -445,13 +446,13 @@
                 <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
             </div>
             <h3>Fast Reconnect</h3>
-            <div class="version">v1.0 вЂ” RecconnectByYaroRage.lua</div>
+            <div class="version">v1.0 — RecconnectByYaroRage.lua</div>
             <p>
-                РњРіРЅРѕРІРµРЅРЅРѕРµ РїРµСЂРµРїРѕРґРєР»СЋС‡РµРЅРёРµ Рє СЃРµСЂРІРµСЂСѓ РїРѕ РЅР°Р¶Р°С‚РёСЋ <strong>F11</strong> РёР»Рё РєРѕРјР°РЅРґРµ <code>/rec</code>.
-                Р“Р»Р°РІРЅР°СЏ С„РёС‡Р° вЂ” <strong>FastConnect</strong>: РїР°С‚С‡РёС‚ РїР°РјСЏС‚СЊ РєР»РёРµРЅС‚Р°, СѓР±РёСЂР°СЏ СЃС‚Р°РЅРґР°СЂС‚РЅСѓСЋ Р·Р°РґРµСЂР¶РєСѓ
-                РїРµСЂРµРґ СЂРµРєРѕРЅРЅРµРєС‚РѕРј. РџРµСЂРµРїРѕРґРєР»СЋС‡РµРЅРёРµ РїСЂРѕРёСЃС…РѕРґРёС‚ РїРѕС‡С‚Рё РјРіРЅРѕРІРµРЅРЅРѕ РІРјРµСЃС‚Рѕ СЃС‚Р°РЅРґР°СЂС‚РЅС‹С… 500РјСЃ.
-                РљРѕРјР°РЅРґР° <code>/fastrec</code> РІРєР»СЋС‡Р°РµС‚/РІС‹РєР»СЋС‡Р°РµС‚ Р±С‹СЃС‚СЂС‹Р№ СЂРµР¶РёРј.
-                РќР°СЃС‚СЂРѕР№РєРё С…СЂР°РЅСЏС‚СЃСЏ РІ INI-С„Р°Р№Р»Рµ Рё СЃРѕС…СЂР°РЅСЏСЋС‚СЃСЏ РјРµР¶РґСѓ СЃРµСЃСЃРёСЏРјРё.
+                Мгновенное переподключение к серверу по нажатию <strong>F11</strong> или команде <code>/rec</code>.
+                Главная фича — <strong>FastConnect</strong>: патчит память клиента, убирая стандартную задержку
+                перед реконнектом. Переподключение происходит почти мгновенно вместо стандартных 500мс.
+                Команда <code>/fastrec</code> включает/выключает быстрый режим.
+                Настройки хранятся в INI-файле и сохраняются между сессиями.
             </p>
             <div class="tags">
                 <span class="tag">F11 Reconnect</span>
@@ -466,14 +467,14 @@
                 <svg viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
             </div>
             <h3>Les (Ohota)</h3>
-            <div class="version">v2.0 вЂ” Les.lua</div>
+            <div class="version">v2.0 — Les.lua</div>
             <p>
-                РЎРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ СЃРєСЂРёРїС‚ РґР»СЏ РѕС…РѕС‚С‹ РІ RADMIR CRMP. РџРѕР»РЅС‹Р№ <strong>ESP</strong>:
-                WH РѕР»РµРЅРµР№ Рё РјРµРґРІРµРґРµР№ СЃ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµРј HP-СЃС‚Р°РґРёР№ (1-3 РґР»СЏ РѕР»РµРЅСЏ, 1-7 РґР»СЏ РјРµРґРІРµРґСЏ),
-                ESP С‚СѓС€, ESP С‚СЂР°РЅСЃРїРѕСЂС‚Р°, Р»РёРЅРёРё РЅР° С†РµР»Рё, РґРёСЃС‚Р°РЅС†РёСЏ. <strong>Auto-Aim</strong> РЅР° Р¶РёРІРѕС‚РЅС‹С…
-                Рё РёРіСЂРѕРєРѕРІ. <strong>Auto-Y</strong> вЂ” Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РЅР°Р¶Р°С‚РёРµ Y РґР»СЏ РїРѕРґР±РѕСЂР°.
-                <strong>Auto-Clear</strong> вЂ” СѓРґР°Р»РµРЅРёРµ Р·Р°СЃС‚СЂСЏРІС€РёС… РјРµСЂС‚РІС‹С… Р¶РёРІРѕС‚РЅС‹С… С‡РµСЂРµР· 20 СЃРµРєСѓРЅРґ.
-                РЈРґР°Р»РµРЅРёРµ СЂР°СЃС‚РёС‚РµР»СЊРЅРѕСЃС‚Рё РґР»СЏ Р»СѓС‡С€РµР№ РІРёРґРёРјРѕСЃС‚Рё. РћС‚РєСЂС‹РІР°РµС‚СЃСЏ РєР»Р°РІРёС€РµР№ <strong>L</strong>.
+                Специализированный скрипт для охоты в RADMIR CRMP. Полный <strong>ESP</strong>:
+                WH оленей и медведей с отображением HP-стадий (1-3 для оленя, 1-7 для медведя),
+                ESP туш, ESP транспорта, линии на цели, дистанция. <strong>Auto-Aim</strong> на животных
+                и игроков. <strong>Auto-Y</strong> — автоматическое нажатие Y для подбора.
+                <strong>Auto-Clear</strong> — удаление застрявших мертвых животных через 20 секунд.
+                Удаление растительности для лучшей видимости. Открывается клавишей <strong>L</strong>.
             </p>
             <div class="tags">
                 <span class="tag">WH Animals</span>
@@ -491,32 +492,32 @@
     <div class="section-header reveal">
         <div class="label">// auto-updater</div>
         <h2>AutoUpdaterYR</h2>
-        <p>Р›Р°СѓРЅС‡РµСЂ, РєРѕС‚РѕСЂС‹Р№ РґРµСЂР¶РёС‚ РІСЃРµ СЃРєСЂРёРїС‚С‹ РІ Р°РєС‚СѓР°Р»СЊРЅРѕРј СЃРѕСЃС‚РѕСЏРЅРёРё</p>
+        <p>Лаунчер, который держит все скрипты в актуальном состоянии</p>
     </div>
 
     <div class="updater-content reveal">
         <div class="updater-info">
-            <h3>РќРёРєР°РєРѕРіРѕ СЂСѓС‡РЅРѕРіРѕ РѕР±РЅРѕРІР»РµРЅРёСЏ вЂ” <span>РїСЂРѕСЃС‚Рѕ Р·Р°РїСѓСЃС‚Рё</span></h3>
+            <h3>Никакого ручного обновления — <span>просто запусти</span></h3>
             <p>
-                <strong>AutoUpdaterYR</strong> вЂ” СЌС‚Рѕ Р»Р°СѓРЅС‡РµСЂ-РѕР±РЅРѕРІР»СЏС‰РёРє РґР»СЏ RADMIR CRMP.
-                РћРЅ СЃРєР°С‡РёРІР°РµС‚ РјР°РЅРёС„РµСЃС‚ (manifest.json) СЃ GitHub, СЃСЂР°РІРЅРёРІР°РµС‚ РµРіРѕ СЃ Р»РѕРєР°Р»СЊРЅС‹РјРё С„Р°Р№Р»Р°РјРё,
-                РїРѕРєР°Р·С‹РІР°РµС‚ СЃРїРёСЃРѕРє РёР·РјРµРЅРµРЅРёР№ Рё РѕР±РЅРѕРІР»СЏРµС‚ С‚РѕР»СЊРєРѕ С‚Рѕ, С‡С‚Рѕ РЅСѓР¶РЅРѕ.
+                <strong>AutoUpdaterYR</strong> — это лаунчер-обновлящик для RADMIR CRMP.
+                Он скачивает манифест (manifest.json) с GitHub, сравнивает его с локальными файлами,
+                показывает список изменений и обновляет только то, что нужно.
             </p>
             <p>
-                РџСЂРё РїРµСЂРІРѕРј Р·Р°РїСѓСЃРєРµ Р»Р°СѓРЅС‡РµСЂ СЃР°Рј РЅР°С…РѕРґРёС‚ РїР°РїРєСѓ СЃ РёРіСЂРѕР№ (РіРґРµ Р»РµР¶РёС‚ gta_sa.exe)
-                РёР»Рё РїСЂРµРґР»Р°РіР°РµС‚ РІС‹Р±СЂР°С‚СЊ РІСЂСѓС‡РЅСѓСЋ. РћРЅ С‚Р°РєР¶Рµ РґРѕСѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РєРѕРјРїРѕРЅРµРЅС‚С‹:
-                MoonLoader, SAMPFUNCS Рё РґСЂСѓРіРёРµ ASI-РїР»Р°РіРёРЅС‹.
+                При первом запуске лаунчер сам находит папку с игрой (где лежит gta_sa.exe)
+                или предлагает выбрать вручную. Он также доустанавливает необходимые компоненты:
+                MoonLoader, SAMPFUNCS и другие ASI-плагины.
             </p>
             <ul class="updater-features">
-                <li>РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РѕР±РЅРѕРІР»РµРЅРёРµ СЃРєСЂРёРїС‚РѕРІ Рё РјРѕРґСѓР»РµР№</li>
-                <li>РЎСЂР°РІРЅРµРЅРёРµ С„Р°Р№Р»РѕРІ РїРѕ SHA256-С…РµС€Р°Рј</li>
-                <li>РЈСЃС‚Р°РЅРѕРІРєР° MoonLoader Рё SAMPFUNCS РµСЃР»Рё РёС… РЅРµС‚</li>
-                <li>Watchdog РґР»СЏ Р°РІС‚РѕРїРµСЂРµР·Р°РїСѓСЃРєР° РїСЂРё РІС‹Р»РµС‚Р°С… (mafk)</li>
-                <li>РћРґРёРЅ exe-С„Р°Р№Р» вЂ” РЅРёС‡РµРіРѕ Р»РёС€РЅРµРіРѕ</li>
+                <li>Автоматическое обновление скриптов и модулей</li>
+                <li>Сравнение файлов по SHA256-хешам</li>
+                <li>Установка MoonLoader и SAMPFUNCS если их нет</li>
+                <li>Watchdog для автоперезапуска при вылетах (mafk)</li>
+                <li>Один exe-файл — ничего лишнего</li>
             </ul>
-            <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.4/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" style="margin-top:10px">
+            <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.0.3/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" style="margin-top:10px">
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                РЎРєР°С‡Р°С‚СЊ РїРѕСЃР»РµРґРЅРёР№ СЂРµР»РёР·
+                Скачать последний релиз
             </a>
         </div>
         <div class="updater-visual">
@@ -525,7 +526,7 @@
                     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 </div>
                 <div class="preview-text">AutoUpdaterYR</div>
-                <div class="preview-sub">РћР±РЅРѕРІР»РµРЅРёРµ СЃРєСЂРёРїС‚РѕРІ...</div>
+                <div class="preview-sub">Обновление скриптов...</div>
                 <div class="preview-bar"><div class="preview-bar-fill"></div></div>
             </div>
         </div>
@@ -535,27 +536,27 @@
 <section id="commands" class="commands-section">
     <div class="section-header reveal">
         <div class="label">// quick commands</div>
-        <h2>РљРѕРјР°РЅРґС‹ РІ РёРіСЂРµ</h2>
-        <p>Р’СЃРµ РѕСЃРЅРѕРІРЅС‹Рµ РєРѕРјР°РЅРґС‹ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ СЃРєСЂРёРїС‚Р°РјРё</p>
+        <h2>Команды в игре</h2>
+        <p>Все основные команды для управления скриптами</p>
     </div>
 
     <div class="commands-grid reveal">
-        <div class="cmd-item"><code>/setpass &lt;РїР°СЂРѕР»СЊ&gt;</code><span>РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РїР°СЂРѕР»СЊ РґР»СЏ AutoLogin</span></div>
-        <div class="cmd-item"><code>/alogin</code><span>Р’РєР»/РІС‹РєР» AutoLogin</span></div>
-        <div class="cmd-item"><code>/mafk</code><span>Р’РєР»/РІС‹РєР» Anti-AFK</span></div>
-        <div class="cmd-item"><code>/afk [mix/1-11]</code><span>Р’С‹Р±РѕСЂ РїР°С‚С‚РµСЂРЅР° Anti-AFK</span></div>
-        <div class="cmd-item"><code>/mspawn</code><span>РЎРјРµРЅРёС‚СЊ РІС‹Р±РѕСЂ СЃРїР°РІРЅР° (Enter/Esc)</span></div>
-        <div class="cmd-item"><code>/autostart</code><span>РђРІС‚РѕР·Р°РїСѓСЃРє РёРіСЂС‹ РґР»СЏ mafk</span></div>
-        <div class="cmd-item"><code>/rec &lt;СЃРµРє&gt;</code><span>Р РµРєРѕРЅРЅРµРєС‚ С‡РµСЂРµР· N СЃРµРєСѓРЅРґ</span></div>
-        <div class="cmd-item"><code>/fastrec</code><span>Р’РєР»/РІС‹РєР» FastConnect</span></div>
-        <div class="cmd-item"><code>F11</code><span>Р‘С‹СЃС‚СЂС‹Р№ СЂРµРєРѕРЅРЅРµРєС‚ (5 СЃРµРє)</span></div>
-        <div class="cmd-item"><code>N (РґРѕР»РіРѕРµ)</code><span>РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ UltraHack</span></div>
-        <div class="cmd-item"><code>/mhelp</code><span>РЎРїРёСЃРѕРє РєРѕРјР°РЅРґ UltraHack</span></div>
-        <div class="cmd-item"><code>/les</code><span>РћС‚РєСЂС‹С‚СЊ РјРµРЅСЋ Les (РћС…РѕС‚Р°)</span></div>
-        <div class="cmd-item"><code>L (СѓРґРµСЂР¶.)</code><span>РћС‚РєСЂС‹С‚СЊ/Р·Р°РєСЂС‹С‚СЊ РјРµРЅСЋ Les</span></div>
-        <div class="cmd-item"><code>/lesr</code><span>РџРµСЂРµР·Р°РіСЂСѓР·РёС‚СЊ Les</span></div>
-        <div class="cmd-item"><code>/skin &lt;id&gt;</code><span>РЎРјРµРЅРёС‚СЊ СЃРєРёРЅ</span></div>
-        <div class="cmd-item"><code>/fix</code><span>РџРѕС‡РёРЅРёС‚СЊ РјР°С€РёРЅСѓ</span></div>
+        <div class="cmd-item"><code>/setpass &lt;пароль&gt;</code><span>Установить пароль для AutoLogin</span></div>
+        <div class="cmd-item"><code>/alogin</code><span>Вкл/выкл AutoLogin</span></div>
+        <div class="cmd-item"><code>/mafk</code><span>Вкл/выкл Anti-AFK</span></div>
+        <div class="cmd-item"><code>/afk [mix/1-11]</code><span>Выбор паттерна Anti-AFK</span></div>
+        <div class="cmd-item"><code>/mspawn</code><span>Сменить выбор спавна (Enter/Esc)</span></div>
+        <div class="cmd-item"><code>/autostart</code><span>Автозапуск игры для mafk</span></div>
+        <div class="cmd-item"><code>/rec &lt;сек&gt;</code><span>Реконнект через N секунд</span></div>
+        <div class="cmd-item"><code>/fastrec</code><span>Вкл/выкл FastConnect</span></div>
+        <div class="cmd-item"><code>F11</code><span>Быстрый реконнект (5 сек)</span></div>
+        <div class="cmd-item"><code>N (долгое)</code><span>Открыть меню UltraHack</span></div>
+        <div class="cmd-item"><code>/mhelp</code><span>Список команд UltraHack</span></div>
+        <div class="cmd-item"><code>/les</code><span>Открыть меню Les (Охота)</span></div>
+        <div class="cmd-item"><code>L (удерж.)</code><span>Открыть/закрыть меню Les</span></div>
+        <div class="cmd-item"><code>/lesr</code><span>Перезагрузить Les</span></div>
+        <div class="cmd-item"><code>/skin &lt;id&gt;</code><span>Сменить скин</span></div>
+        <div class="cmd-item"><code>/fix</code><span>Починить машину</span></div>
     </div>
 </section>
 
@@ -563,7 +564,7 @@
     <p>YaroRage Scripts &copy; 2024-2026 | <a href="https://github.com/yarorage/radmir-scripts" target="_blank">GitHub</a> | RADMIR CRMP</p>
 </footer>
 
-<button class="sound-toggle" id="soundToggle" title="Р—РІСѓРєРё GTA SA">
+<button class="sound-toggle" id="soundToggle" title="Звуки GTA SA">
     <svg id="soundOn" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
     <svg id="soundOff" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 003.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
 </button>
