@@ -381,9 +381,7 @@
 <nav id="navbar">
     <div class="nav-logo"><span class="yr">Y</span>ARO<span class="yr">R</span>AGE</div>
     <ul class="nav-links">
-        <li><a href="#scripts">Скрипты</a></li>
         <li><a href="#updater">AutoUpdaterYR</a></li>
-        <li><a href="#commands">Команды</a></li>
         <li><a href="https://github.com/yarorage/radmir-scripts" target="_blank">GitHub</a></li>
     </ul>
 </nav>
@@ -396,116 +394,14 @@
     <h1><span class="gradient"><span class="yr">Y</span>aro<span class="yr">R</span>age</span><br><span class="gradient">Script Collection</span></h1>
     <p class="hero-sub">Набор скриптов для MoonLoader, которые автоматизируют, ускоряют и делают игру в RADMIR CRMP удобнее</p>
     <div class="hero-buttons">
-        <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.1.3/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" id="downloadBtn">
+        <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.1.4/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" id="downloadBtn">
             <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             Скачать AutoUpdaterYR
         </a>
-        <a href="#scripts" class="btn btn-outline">Узнать больше</a>
     </div>
 </section>
 
-<section id="scripts">
-    <div class="section-header reveal">
-        <div class="label">// moonloader scripts</div>
-        <h2>Наши скрипты</h2>
-        <p>Каждый скрипт создан для решения конкретных задач в RADMIR CRMP и работает через MoonLoader + SAMPFUNCS</p>
-    </div>
 
-    <div class="scripts-grid">
-        <div class="script-card reveal">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-            <h3>AutoLogin 2.0</h3>
-            <div class="version">v2.0 — AutoLogin_2.0.lua</div>
-            <p>
-                Полная автоматизация входа на сервер. Скрипт сам вводит пароль через эмуляцию нажатий клавиш,
-                выбирает спавн (Enter/Esc по настройке) и переподключается при любых вылетах.
-                Включает <strong>Anti-AFK</strong> с 11 паттернами movement и систему <strong>AutoRestart</strong> —
-                если игра вылетела, mafk-watchdog перезапустит её и снова залогинит.
-                Никакого ручного ввода — просто запусти и играй.
-            </p>
-            <div class="tags">
-                <span class="tag">Auto-Login</span>
-                <span class="tag">Anti-AFK</span>
-                <span class="tag">Reconnect</span>
-                <span class="tag">AutoRestart</span>
-                <span class="tag">Spawn Choice</span>
-            </div>
-        </div>
-
-        <div class="script-card reveal">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M7 5h10v2h2V3c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v4h2V5zm8.41 11.59L20 12l-4.59-4.59L14 8.83 17.17 12 14 15.17l1.41 1.42zM10 15.17L6.83 12 10 8.83 8.59 7.41 4 12l4.59 4.59L10 15.17zM17 19H7v-2H5v4c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-4h-2v2z"/></svg>
-            </div>
-            <h3>UltraHack (CheatByYaroRage)</h3>
-            <div class="version">v1.0 — CheatByYaroRage.lua</div>
-            <p>
-                Мульти-чит с удобным ImGui интерфейсом (открывается долгим нажатием N).
-                Включает <strong>Silent Aim</strong> (LITE/RAGE), <strong>TriggerBot</strong> в 3 режимах,
-                <strong>ClickWarp</strong> (ТП по карте колёсиком), <strong>AirBrake</strong>, <strong>SpeedHack</strong>,
-                <strong>GodCar</strong>, <strong>NoReload</strong>, <strong>NoDamage</strong> от союзников,
-                FullSkillGun, Damage Informer, EyeFish, AntiStun и многое другое.
-                Все настройки сохраняются в INI и автоматически загружаются.
-            </p>
-            <div class="tags">
-                <span class="tag">Silent Aim</span>
-                <span class="tag">TriggerBot</span>
-                <span class="tag">ClickWarp</span>
-                <span class="tag">AirBrake</span>
-                <span class="tag">SpeedHack</span>
-                <span class="tag">GodCar</span>
-                <span class="tag">NoReload</span>
-                <span class="tag">ESP</span>
-            </div>
-        </div>
-
-        <div class="script-card reveal">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-            </div>
-            <h3>Fast Reconnect</h3>
-            <div class="version">v1.0 — RecconnectByYaroRage.lua</div>
-            <p>
-                Мгновенное переподключение к серверу по нажатию <strong>F11</strong> или команде <code>/rec</code>.
-                Главная фича — <strong>FastConnect</strong>: патчит память клиента, убирая стандартную задержку
-                перед реконнектом. Переподключение происходит почти мгновенно вместо стандартных 500мс.
-                Команда <code>/fastrec</code> включает/выключает быстрый режим.
-                Настройки хранятся в INI-файле и сохраняются между сессиями.
-            </p>
-            <div class="tags">
-                <span class="tag">F11 Reconnect</span>
-                <span class="tag">FastConnect</span>
-                <span class="tag">Memory Patch</span>
-                <span class="tag">/rec</span>
-            </div>
-        </div>
-
-        <div class="script-card reveal">
-            <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
-            </div>
-            <h3>Les (Ohota)</h3>
-            <div class="version">v2.0 — Les.lua</div>
-            <p>
-                Специализированный скрипт для охоты в RADMIR CRMP. Полный <strong>ESP</strong>:
-                WH оленей и медведей с отображением HP-стадий (1-3 для оленя, 1-7 для медведя),
-                ESP туш, ESP транспорта, линии на цели, дистанция. <strong>Auto-Aim</strong> на животных
-                и игроков. <strong>Auto-Y</strong> — автоматическое нажатие Y для подбора.
-                <strong>Auto-Clear</strong> — удаление застрявших мертвых животных через 20 секунд.
-                Удаление растительности для лучшей видимости. Открывается клавишей <strong>L</strong>.
-            </p>
-            <div class="tags">
-                <span class="tag">WH Animals</span>
-                <span class="tag">ESP</span>
-                <span class="tag">Auto-Aim</span>
-                <span class="tag">Auto-Y</span>
-                <span class="tag">Anti-Freeze</span>
-                <span class="tag">Foliage Clear</span>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="updater" class="updater-section">
     <div class="section-header reveal">
@@ -534,7 +430,7 @@
                 <li>Watchdog для автоперезапуска при вылетах (mafk)</li>
                 <li>Один exe-файл — ничего лишнего</li>
             </ul>
-            <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.1.3/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" style="margin-top:10px">
+            <a href="https://github.com/yarorage/radmir-scripts/releases/download/v1.1.4/AutoUpdaterYR.exe" target="_blank" class="btn btn-primary" style="margin-top:10px">
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                 Скачать последний релиз
             </a>
@@ -549,33 +445,6 @@
                 <div class="preview-bar"><div class="preview-bar-fill"></div></div>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="commands" class="commands-section">
-    <div class="section-header reveal">
-        <div class="label">// quick commands</div>
-        <h2>Команды в игре</h2>
-        <p>Все основные команды для управления скриптами</p>
-    </div>
-
-    <div class="commands-grid reveal">
-        <div class="cmd-item"><code>/setpass &lt;пароль&gt;</code><span>Установить пароль для AutoLogin</span></div>
-        <div class="cmd-item"><code>/alogin</code><span>Вкл/выкл AutoLogin</span></div>
-        <div class="cmd-item"><code>/mafk</code><span>Вкл/выкл Anti-AFK</span></div>
-        <div class="cmd-item"><code>/afk [mix/1-11]</code><span>Выбор паттерна Anti-AFK</span></div>
-        <div class="cmd-item"><code>/mspawn</code><span>Сменить выбор спавна (Enter/Esc)</span></div>
-        <div class="cmd-item"><code>/autostart</code><span>Автозапуск игры для mafk</span></div>
-        <div class="cmd-item"><code>/rec &lt;сек&gt;</code><span>Реконнект через N секунд</span></div>
-        <div class="cmd-item"><code>/fastrec</code><span>Вкл/выкл FastConnect</span></div>
-        <div class="cmd-item"><code>F11</code><span>Быстрый реконнект (5 сек)</span></div>
-        <div class="cmd-item"><code>N (долгое)</code><span>Открыть меню UltraHack</span></div>
-        <div class="cmd-item"><code>/mhelp</code><span>Список команд UltraHack</span></div>
-        <div class="cmd-item"><code>/les</code><span>Открыть меню Les (Охота)</span></div>
-        <div class="cmd-item"><code>L (удерж.)</code><span>Открыть/закрыть меню Les</span></div>
-        <div class="cmd-item"><code>/lesr</code><span>Перезагрузить Les</span></div>
-        <div class="cmd-item"><code>/skin &lt;id&gt;</code><span>Сменить скин</span></div>
-        <div class="cmd-item"><code>/fix</code><span>Починить машину</span></div>
     </div>
 </section>
 
